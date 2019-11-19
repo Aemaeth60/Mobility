@@ -1,0 +1,4 @@
+<?
+    include("places.php");
+    //getPlaces();
+?>

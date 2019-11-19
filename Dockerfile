@@ -78,3 +78,7 @@ EXPOSE 3306
 
 
 CMD ["/usr/sbin/run-lamp.sh"]
+#CMD ["chmod 777 /var/run/mysqld/mysqld.sock"]
+USER root
+#COPY www/ /var/www/html
+COPY 50-server.cnf /etc/mysql/mariadb.conf.d/
