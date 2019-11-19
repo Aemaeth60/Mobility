@@ -2,8 +2,8 @@ CREATE TABLE IF NOT EXISTS `interests` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `name` varchar(256) NOT NULL,
 `description` text NOT NULL,
-'long' double NOT NULL,
-'lat' double NOT NULL,
+`long` double NOT NULL,
+`lat` double NOT NULL,
 primary key (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
