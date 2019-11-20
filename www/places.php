@@ -14,17 +14,20 @@
       	break;
     }
 
-   /* function distance(var lat1, var long1, var lat2, var long2) {
-	var latitude1 = lat1 * Math.PI / 180;
-   	var latitude2 = lat2 * Math.PI / 180;
-	var longitude1 = long1 * Math.PI / 180;
-        var longitude2 = long2 * Math.PI / 180;
-        var R = 6371;//d?
+    function distance($lat1, $long1, $lat2, $long2) {
+      if ($lat1 == $lat2 && $long2 == $long1) {
+        return 0;
+      }
+	    $latitude1 = $lat1 * M_PI / 180;
+   	  $latitude2 = $lat2 * M_PI / 180;
+	    $longitude1 = $long1 * M_PI / 180;
+      $longitude2 = $long2 * M_PI / 180;
+      $R = 6371;//d?
 
-	var d = R * Math.Acos(Math.Cos(latitude1) * Math.Cos(latitude2) * Math.Cos(longitude2 - longitude1) + Math.Sin(latitude1) * *Math.Sin(latitude2));
+	    $d = $R * acos(cos($latitude1) * cos($latitude2) * cos($longitude2 - $longitude1) + sin($latitude1) * sin($latitude2));
 
-        return d;
-    }*/
+      return $d;
+    }
 
      function getPlaces()
      {
@@ -42,22 +45,38 @@
 	}
 	else
 	    echo "Problème requête\n";
-	//var ODmatrix = new Array(mysqli_num_rows($result));
-        while($row = mysqli_fetch_array($result))
+	$ODmatrix = array();
+  $result_size =  mysqli_num_rows($result);
+  while($row = mysqli_fetch_array($result))
         {
           $response[] = $row;
+          //array_push($ODmatrix, array({"lat" : $row['lat'], "long": $row['long']}))
+          //echo $row['lat'];
 	  /*echo $row['lat'];
 	  echo "\n";
 	  echo $row['long'];
-	  echo "\n";*/
+	  echo "\n";
         }
-echo $response.keys();
+  echo $response[0];
 	/*for(var i=0; i < $response.length; i++)
 		echo $response[0]['lat'];*/
-        header('Content-Type: application/json');
-	//echo mysqli_num_rows($result);
-        $json = json_encode($response, JSON_PRETTY_PRINT);
-	//echo $response[1]['name'];
-	mysqli_close($conn);
+  }
+    foreach ($response as $key => $value) {
+      $line = array();
+      foreach ($response as $key2 => $value2) {
+        //echo distance(doubleval($value['lat']), doubleval($value['long']), doubleval($value2['lat']), doubleval($value2['long']);
+        array_push($line, distance(doubleval($value['lat']), doubleval($value['long']), doubleval($value2['lat']), doubleval($value2['long'])));
       }
+      array_push($ODmatrix, $line);
+    }
+
+
+    header('Content-Type: application/json');
+    $json = json_encode($ODmatrix, JSON_PRETTY_PRINT);
+	//echo mysqli_num_rows($result);
+  //$json = json_encode($response, JSON_PRETTY_PRINT);
+
+	echo $json;
+	mysqli_close($conn);
+  }
 ?>
