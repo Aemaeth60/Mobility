@@ -39,19 +39,31 @@
 		return $min_index;
 	}
 
+	function path($parent, $j) {
+		if($parent[$j]  == -1)
+			return;
+
+		path($parent, $parent[$j]);
+		echo $j+1, " ";
+		//return $d;
+
+	}
+
 	function dijkstra($matrix, $src) {
 
 		//$q = new Set();
 		$q = array();
 		$dist = array();
+		$parent = array();
 		//$echo $maxVal;
 		
 		for ($i=0; $i < count($matrix); $i++) { 
 			array_push($dist, 999999);
 			array_push($q,0);
+			array_push($parent, 0);
 
 		}
-
+		$parent[$src] = -1;
 		$dist[$src] = 0;
 
 		for ($i=0; $i < count($matrix) - 1; $i++) { 
@@ -61,11 +73,13 @@
 			for ($j=0; $j < count($matrix); $j++) { 
 				 if($q[$j] == 0 && $matrix[$u][$j] != 0 && $dist[$u] != 999999 && $dist[$u] + $matrix[$u][$j] < $dist[$j]) {
 				 	$dist[$j] = $dist[$u] + $matrix[$u][$j];
+				 	$parent[$j] = $u; 
 				 }
 			}
 		}
 		for ($i=0; $i < count($dist); $i++) { 
-			echo "Noeud : ", $i, ", Distance : ", $dist[$i], "<br/>";
+			echo "Noeud : ", $i+1, ", Distance : ", $dist[$i], "<br/>";
+			echo "Chemin :", path($parent, $i), "<br/>";
 		}
 	}
 
