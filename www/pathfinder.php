@@ -15,6 +15,31 @@
 		}
 	}
 
+	function bestNode($allSol) {
+
+		$allDist = array();
+		for ($i=0; $i < count($allSol[0][0]); $i++) { 
+			array_push($allDist, 0);
+		}
+
+		for ($i=0; $i < count($allSol); $i++) { 
+			for ($j=0; $j < count($allSol[$i][0]); $j++) { 
+				$allDist[$j] += $allSol[$i][0][$j];
+			}
+		}
+
+		$min = 999999;
+		$min_idx = 0;
+		for ($i=0; $i < count($allDist); $i++) { 
+			if($allDist[$i] < $min) {
+				$min = $allDist[$i];
+				$min_idx = $i;
+			}
+		}
+
+		return $min_idx;
+	}
+
 
 
 ?>

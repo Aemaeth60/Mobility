@@ -49,9 +49,10 @@
 
 	}
 
-	function dijkstra($matrix, $src) {
+	function dijkstra($matrix, $src, $return) {
 
 		//$q = new Set();
+		//$return = array();
 		$q = array();
 		$dist = array();
 		$parent = array();
@@ -77,7 +78,7 @@
 				 }
 			}
 		}
-		echo "Chemin depuis le noeud : ", $src;
+		echo "Chemin depuis le noeud : ", $src+1;
 		echo "<ul>";
 		for ($i=0; $i < count($dist); $i++) { 
 			if($i != $src) {
@@ -86,6 +87,8 @@
 			}
 		}
 		echo "</ul>";
+
+		return array($dist, $parent);
 	}
 
 ?>
