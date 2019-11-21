@@ -77,10 +77,15 @@
 				 }
 			}
 		}
+		echo "Chemin depuis le noeud : ", $src;
+		echo "<ul>";
 		for ($i=0; $i < count($dist); $i++) { 
-			echo "<p>Vers noeud : ", $i+1, ", Distance : ", $dist[$i], "</p>";
-			echo "<p>Chemin : ", path($parent, $i), "</p>";
+			if($i != $src) {
+				echo "<li>Vers noeud : ", $i+1, ", Distance : ", $dist[$i], "";
+				echo " , Chemin : ", path($parent, $i), "</li>";
+			}
 		}
+		echo "</ul>";
 	}
 
 ?>
