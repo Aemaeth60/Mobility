@@ -17,7 +17,7 @@
 	Ci-dessous on trouvera la reprensentation (simple) de la matrice.
 </p>
 
-<? 	display($distances); ?>
+<? 	display($distances, $places_infos); ?>
 
 <p>
 	Grâce au traitement fait par la fonction dans le fichier <i>pathfinder.php</i> on va pouvoir éliminer les arcs transitifs de la matrice précédente et ainsi obtenir le résultat suivant.
@@ -25,7 +25,7 @@
 </p>
 
 
-<? 	display($distances_cp); ?>
+<? 	display($distances_cp, $places_infos); ?>
 
 <p>
 	Enfin dans les fonctions présentes dans le fichier <i>fwalgorithm.php</i> on appliquera un dijkstra afin de pouvoir calculer la distance d'un point donné à un autre. Par la suite on cherchera à minimiser la distance parcourue de tous les utilisateurs.
