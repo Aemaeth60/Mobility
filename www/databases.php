@@ -15,4 +15,18 @@ $distances = array(
 
 );
 
+$places_infos = array(
+
+	array("name" => "Quick belfort", "description" => "Restauration rapide" , "long" => "47.6277674", "lat" => "6.8580644"),//quicl=k
+	array("name" => "Cinéma Pathé belfort", "description" => "Cinéma" , "long" => "47.6301517", "lat" => "6.8599163"),
+	array("name" => "IUT Belfort", "description" => "IUT BM" , "long" => "47.6437703", "lat" => "6.8406881"),
+	array("name" => "Lion de Belfort", "description" => "Monument de Bartholdi" , "long" => "47.6366719", "lat" => "6.8623916"),
+	array("name" => "Département R&T Montbéliard", "description" => "Meilleure formation ever" , "long" => "47.4947933", "lat" => "6.8008053"),
+	array("name" => "Etang des forges", "description" => "Lieu loisirs" , "long" => "47.6533531", "lat" => "6.8682686"),
+	array("name" => "Station Total des Glacis", "description" => "Station essence" , "long" => "47.6385967", "lat" => ",6.8760222"),
+	array("name" => "Auchan Bessoncourt", "description" => "Centre commercial" , "long" => "47.6401711", "lat" => "6.9132723"),
+	array("name" => "MacDonalds Andelnans", "description" => "Restauration rapide" , "long" => "47.5994752", "lat" => "6.8565879"),
+	array("name" => "Régis des transports Belfort", "description" => "Optymo" , "long" => "47.6226909", "lat" => "6.8549171")
+);
+
 ?>

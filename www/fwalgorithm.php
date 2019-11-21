@@ -78,8 +78,8 @@
 			}
 		}
 		for ($i=0; $i < count($dist); $i++) { 
-			echo "Noeud : ", $i+1, ", Distance : ", $dist[$i], "<br/>";
-			echo "Chemin :", path($parent, $i), "<br/>";
+			echo "<p>Vers noeud : ", $i+1, ", Distance : ", $dist[$i], "</p>";
+			echo "<p>Chemin : ", path($parent, $i), "</p>";
 		}
 	}
 
