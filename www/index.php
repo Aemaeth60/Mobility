@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
 <?
     //include("places.php");
     //getPlaces();
@@ -63,3 +71,6 @@
 </p>
 
 <p><b>Note:</b> Le reste des fichiers sont simplements des reliquats de tests précedents ou bien des implémentations futures. Il est indiqué dans ce document les fichiers à analyser plus en détails.</p>
+
+</body>
+</html> 
